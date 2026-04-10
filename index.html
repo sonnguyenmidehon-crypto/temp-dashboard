@@ -65,26 +65,8 @@ body {
 </div>
 
 <script>
-async function getData() {
-    try {
-        const token = "5384227c-a920-4210-a6e9-6ed52e4c426a";
-
-        const tempUrl = `https://api.eoh.io/api/v1/data/${token}/V2`;
-        const humiUrl = `https://api.eoh.io/api/v1/data/${token}/V3`;
-
-        const t = await fetch(tempUrl).then(r => r.json());
-        const h = await fetch(humiUrl).then(r => r.json());
-
-        document.getElementById("temp").innerText = t.value + " °C";
-        document.getElementById("humi").innerText = h.value + " %";
-
-    } catch(e) {
-        console.log("Lỗi API:", e);
-    }
-}
-
-setInterval(getData, 2000);
-getData();
+document.getElementById("temp").innerText = "31.39 °C";
+document.getElementById("humi").innerText = "80.32 %";
 </script>
 
 </body>
